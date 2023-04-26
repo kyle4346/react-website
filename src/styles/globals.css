@@ -3,18 +3,36 @@
 @tailwind utilities;
 
 .title_name {
-    text-align: center;
-    font-size: 400%;
-    line-height: 5rem;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    margin-top: 10vh;
+  text-align: center;
+  font-size: 400%;
+  line-height: 5rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .char {
-    transform: translateY(115px);
-    transition: transform 0.5s;
+  transform: translateY(115px);
+  transition: transform 0.5s;
 }
 
 :root {
-    background-color: hsla(42, 60%, 81%, 0.836);
+  background-color: hsl(210,66.67%,97.65%);
 }
+
+.water {
+  pointer-events: none;
+}
+
+.green {
+    
+    background-color: green;
+    height: 500px;
+    width: 500px;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
