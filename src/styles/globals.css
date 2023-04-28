@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  background-color: hsl(210,66.67%,97.65%);
+}
+
 .title_name {
   text-align: center;
   font-size: 400%;
@@ -14,8 +18,29 @@
   transition: transform 0.5s;
 }
 
-:root {
-  background-color: hsl(210,66.67%,97.65%);
+.typewriter-list {
+  display: grid;
+  justify-items: start;
+}
+
+.typewriter-text {
+  font-size: 2em;
+  letter-spacing: 5px;
+  border-right: 1px solid black;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:  typing 2s 3 alternate forwards; 
+}
+
+@keyframes cursor {
+  0% {border-color: transparent; content: "Hello World";}
+  100% {border-color: transparent;}
+}
+
+@keyframes typing {
+  from { width: 0%;}
+  to { width: 100%; inner: "water";}
 }
 
 .water {
@@ -33,6 +58,24 @@ section {
     display: grid;
     place-items: center;
     align-content: center;
+    text-align: center;
     min-height: 100vh;
 }
 
+.hid {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.image {
+
+    display: inline;
+}
