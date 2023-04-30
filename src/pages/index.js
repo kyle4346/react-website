@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import React from "react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -24,19 +23,19 @@ export default function Home() {
       duration: 0.2,
     });
 
-    gsap.to(".green", {
-      x: 200,
-      duration: 5,
-      rotation: 360,
-      backgroundColor: "#F5F9FD",
-      repeat: 2,
-      yoyo: true,
-    });
+    // gsap.to(".green", {
+    //   x: 200,
+    //   duration: 5,
+    //   rotation: 360,
+    //   backgroundColor: "#F5F9FD",
+    //   repeat: 2,
+    //   yoyo: true,
+    // });
 
     const hiddenElements = document.querySelectorAll(".hid");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log(entry);
+        // console.log(entry);
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
         } else {
@@ -65,30 +64,71 @@ export default function Home() {
       <h1 className="title_name" id="my-text">
         Kyle Cortez
       </h1>
+
       {/* <div className="green"></div> */}
 
       <section>
-        <div className="typewriter-wrapper">
+        <div>
           <ul className="typewriter-list">
-            <li className="typewriter-text"><span>Software Engineer</span></li>
-            {/* <li className="typewriter-text"><span>Software Developer</span></li>
-            <li className="typewriter-text"><span>Circuit Designer</span></li>
-            <li className="typewriter-text"><span>Entrepreneur</span></li> */}
+            <li className="text1">
+              <h3 className="typewriter-text1">Software Engineer</h3>
+            </li>
+            <li className="text2">
+              <h3 className="typewriter-text2">Web Developer</h3>
+            </li>
+            <li className="text3">
+              <h3 className="typewriter-text3">Circuit Designer</h3>
+            </li>
+            <li className="text4">
+              <h3 className="typewriter-text4">Entrepreneur</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+      {/* https://www.characterlives.org/wp-content/uploads/2019/06/power-of-commitment.jpg */}
+
+      <section className="hid">
+        <h3>Skills</h3>
+        <div >
+          <ul className="skills-grid">
+            <li>React
+            {/* https://pluspng.com/png-180026.html */}
+            <img src="https://pluspng.com/img-png/react-logo-png-js-logo-react-react-js-icon-512x512.png" alt="React Logo PNG" />
+            </li>
+            <li>Vue
+            {/* Icon used through icons8.com */}
+            <img src="https://img.icons8.com/color/120/vue-js.png" alt="Vue" />
+            </li>
+            <li>Arduino
+            {/* Icon used through iconarchive.com  */}
+            <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/128/arduino-icon.png" alt="Arduino" />
+            </li>
+            <li>Multisim
+            {/* Icon used through file-extensions.org */}
+            <img src="https://www.file-extensions.org/imgs/app-icon/128/5484/ni-multisim-icon.png" alt="Multisim" />
+            </li>
+            <li>AWS
+            {/* Icon used through iconarchive.com */}
+            <img src="https://icons.iconarchive.com/icons/uiconstock/socialmedia/128/AWS-icon.png" alt="AWS" />
+            </li>
+            <li>Javascript
+            {/* Icon used through icon-library.com */}
+            <img src="https://icon-library.com/images/javascript-icon-png/javascript-icon-png-13.jpg" alt="Javascript" className="something"/>
+            </li>
+            <li>HTML & CSS</li>
+            <li>Unity</li>
+            <li>T-SQL</li>
+            <li>Wireshark</li>
+            <li>Customer Service</li>
+            <li>Microsoft Azure</li>
           </ul>
         </div>
       </section>
 
       <section className="hid">
         <div className="logos">
-          <div className="logo hid">
+          <div className="logo">
             <h3>Commitment</h3>
-            <Image
-              src="https://www.characterlives.org/wp-content/uploads/2019/06/power-of-commitment.jpg"
-              alt="Work Hard, Play Hard"
-              width="100"
-              height="100"
-              className="image"
-            />
             <p>
               Learning multiple programming languages and designing complex
               circuits throughout my career both in academia and personally is
@@ -96,7 +136,7 @@ export default function Home() {
               that may come
             </p>
           </div>
-          <div className="logo hid">
+          <div className="logo">
             <h3>Ambitious</h3>
             <p>
               My passion to become a tech entrepreneur is a dream I&apos;ve had
@@ -106,7 +146,7 @@ export default function Home() {
               I&apos;m glad to still be working on myself after a while.
             </p>
           </div>
-          <div className="logo hid">
+          <div className="logo">
             <h3>Goal-Oriented</h3>
             <p>
               I always keep myself focused at the task at hand and ensure that
@@ -134,13 +174,59 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="hid">
-        <h3>Resume</h3>
-        <h4>Skills</h4>
-        <p className="logo">
-          React.js, Vue, Arduino, NI Multisim, Amazon AWS, Javascript, HTML &
-          CSS, Unity, T-SQL, Wireshark, Customer Service
-        </p>
+      
+
+      <section className="contact ">
+        <div className="hid contact">
+          <div>
+            <h3>Contact Info</h3>
+            <p className="text-left">
+              <br></br>
+              <br></br>
+              Address: Houston, Texas
+              <br></br>
+              <br></br>
+              Email: kyle4346@gmail.com
+              <br></br>
+              <br></br>
+              Phone Number: +1 832 542 1275
+            </p>
+          </div>
+          <div className="w-[50vw]">
+            <h3>Contact Me</h3>
+            <br/>
+            <form>
+              <div>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="  Name"
+                  className="mr-[10%] w-[45%]"
+                />
+                <input
+                  type="text"
+                  id="email"
+                  placeholder="  Email Address"
+                  className="w-[45%]"
+                />
+              </div>
+              <div>
+                <input type="text" id="subject" placeholder="  Subject" className="w-full"/>
+              </div>
+              <div>
+                <textarea
+                  id="Message"
+                  placeholder="  Message"
+                  className="w-full min-h-[5vh] max-h-[35vh]"
+                  rows={4}
+                />
+              </div>
+              <div>
+                <input type="submit" placeholder="submit" />
+              </div>
+            </form>
+          </div>
+        </div>
       </section>
     </main>
   );

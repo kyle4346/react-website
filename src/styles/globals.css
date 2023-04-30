@@ -3,13 +3,19 @@
 @tailwind utilities;
 
 :root {
-  background-color: hsl(210,66.67%,97.65%);
+  background-color: hsl(212.73, 80.49%, 91.96%);
+  /* hsl(212.73,80.49%,91.96%)  */
+  /* hsl(210,66.67%,97.65%) */
+  font-size: 5vh;
+}
+
+p {
+  font-size: 3vh;
 }
 
 .title_name {
   text-align: center;
-  font-size: 400%;
-  line-height: 5rem;
+  font-size: 7vh;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -21,61 +27,166 @@
 .typewriter-list {
   display: grid;
   justify-items: start;
+  white-space: nowrap;
+  /* clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%); */
 }
 
-.typewriter-text {
-  font-size: 2em;
+.typewriter-text1 {
+  font-size: 1em;
   letter-spacing: 5px;
-  border-right: 1px solid black;
-  width: 100%;
+  width: 0%;
   white-space: nowrap;
   overflow: hidden;
-  animation:  typing 2s 3 alternate forwards; 
+  animation: typing 2s 9 2s ease-in-out alternate forwards;
 }
 
-@keyframes cursor {
-  0% {border-color: transparent; content: "Hello World";}
-  100% {border-color: transparent;}
+.typewriter-text2 {
+  font-size: 1em;
+  letter-spacing: 5px;
+  width: 0%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s 4 2s ease-in-out alternate forwards;
+}
+
+.typewriter-text3 {
+  font-size: 1em;
+  letter-spacing: 5px;
+  width: 0%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s 6 2s ease-in-out alternate forwards;
+}
+
+.typewriter-text4 {
+  font-size: 1em;
+  letter-spacing: 5px;
+  width: 0%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s 8 2s ease-in-out alternate forwards;
+}
+
+.text1 {
+  margin-top: -3em;
+  opacity: 1;
+  animation: disp-reverse 0.1s 1 6s forwards, disp 0.1s 1 18s forwards;
+}
+.text2 {
+  margin-top: -3em;
+  opacity: 0;
+  animation: disp 0.1s 1 6s forwards, disp-reverse 0.1s 1 10s forwards;
+}
+.text3 {
+  margin-top: -3em;
+  opacity: 0;
+  animation: disp 0.1s 1 10s forwards, disp-reverse 0.1s 1 14s forwards;
+}
+.text4 {
+  margin-top: -3em;
+  opacity: 0;
+  animation: disp 0.1s 1 14s forwards, disp-reverse 0.1s 1 18s forwards;
+}
+
+@keyframes disp {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disp-reverse {
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes typing {
-  from { width: 0%;}
-  to { width: 100%; inner: "water";}
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+    border-right: 2px solid black;
+  }
 }
 
 .water {
   pointer-events: none;
 }
 
-.green {
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 10vw);
+  grid-template-rows: repeat(2, 20vh);
+}
+
+.skills-grid li {
+  margin: auto;
+}
+
+.skills-grid li {
+  font-size: 3vh;
+}
+/* .green {
     
     background-color: green;
     height: 500px;
     width: 500px;
-}
+} */
 
 section {
-    display: grid;
-    place-items: center;
-    align-content: center;
-    text-align: center;
-    min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  min-height: 100vh;
 }
 
 .hid {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1s;
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
 }
 
 .show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }
 
 .image {
+  display: inline;
+}
 
-    display: inline;
+.logos {
+  display: flex;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: gainsboro;
+  height: 50vh;
+  width: 100%;
+}
+
+.contact div form {
+  display: grid;
+  font-size: 3vh;
+  justify-content: center;
+  row-gap: 1vh;
+}
+
+#div {
+  height: 5vh;
+}
+
+Image {
+  background: transparent;
+}
+
+img {
+  height: 4em;
+  width: 100%;
 }
