@@ -1,9 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import { Orbitron } from "next/font/google";
 import SplitType from "split-type";
 import { useEffect } from "react";
 import gsap from "gsap";
 import React from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import url from "./kyle-cortez.png";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -61,14 +64,17 @@ export default function Home() {
   //https://www.youtube.com/watch?v=ysz5S6PUM-U
   return (
     <main className={orbitron.className}>
-      <h1 className="title_name" id="my-text">
-        Kyle Cortez
-      </h1>
+      <nav className="menu">
+        <h1 className="title_name" id="my-text">
+          Kyle Cortez
+        </h1>
+      </nav>
 
       {/* <div className="green"></div> */}
 
-      <section>
-        <div>
+      <section id="main">
+        <Image src={url} alt=" " priority={true} className="main-image" />
+        <div className="centered">
           <ul className="typewriter-list">
             <li className="text1">
               <h3 className="typewriter-text1">Software Engineer</h3>
@@ -87,41 +93,77 @@ export default function Home() {
       </section>
       {/* https://www.characterlives.org/wp-content/uploads/2019/06/power-of-commitment.jpg */}
 
-      <section className="hid">
-        <h3>Skills</h3>
-        <div >
-          <ul className="skills-grid">
-            <li>React
-            {/* https://pluspng.com/png-180026.html */}
-            <img src="https://pluspng.com/img-png/react-logo-png-js-logo-react-react-js-icon-512x512.png" alt="React Logo PNG" />
-            </li>
-            <li>Vue
-            {/* Icon used through icons8.com */}
-            <img src="https://img.icons8.com/color/120/vue-js.png" alt="Vue" />
-            </li>
-            <li>Arduino
-            {/* Icon used through iconarchive.com  */}
-            <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/128/arduino-icon.png" alt="Arduino" />
-            </li>
-            <li>Multisim
-            {/* Icon used through file-extensions.org */}
-            <img src="https://www.file-extensions.org/imgs/app-icon/128/5484/ni-multisim-icon.png" alt="Multisim" />
-            </li>
-            <li>AWS
-            {/* Icon used through iconarchive.com */}
-            <img src="https://icons.iconarchive.com/icons/uiconstock/socialmedia/128/AWS-icon.png" alt="AWS" />
-            </li>
-            <li>Javascript
-            {/* Icon used through icon-library.com */}
-            <img src="https://icon-library.com/images/javascript-icon-png/javascript-icon-png-13.jpg" alt="Javascript" className="something"/>
-            </li>
-            <li>HTML & CSS</li>
-            <li>Unity</li>
-            <li>T-SQL</li>
-            <li>Wireshark</li>
-            <li>Customer Service</li>
-            <li>Microsoft Azure</li>
-          </ul>
+      <section className="skills">
+        <div className="hid">
+          <h3>Skills</h3>
+          <div>
+            <ul className="skills-grid">
+              <li>
+                React
+                {/* https://pluspng.com/png-180026.html */}
+                <img
+                  src="https://pluspng.com/img-png/react-logo-png-js-logo-react-react-js-icon-512x512.png"
+                  alt="React Logo PNG"
+                />
+              </li>
+              <li>
+                Vue
+                {/* Icon used through icons8.com */}
+                <img
+                  src="https://img.icons8.com/color/120/vue-js.png"
+                  alt="Vue"
+                />
+              </li>
+              <li>
+                Arduino
+                {/* Icon used through iconarchive.com  */}
+                <img
+                  src="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/128/arduino-icon.png"
+                  alt="Arduino"
+                />
+              </li>
+              <li>
+                Multisim
+                {/* Icon used through file-extensions.org */}
+                <img
+                  src="https://www.file-extensions.org/imgs/app-icon/128/5484/ni-multisim-icon.png"
+                  alt="Multisim"
+                />
+              </li>
+              <li>
+                AWS
+                {/* Icon used through iconarchive.com */}
+                <img
+                  src="https://icons.iconarchive.com/icons/uiconstock/socialmedia/128/AWS-icon.png"
+                  alt="AWS"
+                />
+              </li>
+              <li>
+                Javascript
+                {/* Icon used through icon-library.com */}
+                <img
+                  src="https://icon-library.com/images/javascript-icon-png/javascript-icon-png-13.jpg"
+                  alt="Javascript"
+                />
+              </li>
+              <li>
+                Unity
+                {/*  Icons used through iconfinder.com */}
+                <img
+                  src="https://cdn4.iconfinder.com/data/icons/various-icons-2/476/Unity.png"
+                  alt="Unity"
+                />
+              </li>
+              <li>
+                SQL
+                {/* Icons used through th.bing.com */}
+                <img
+                  src="https://th.bing.com/th/id/R.d419fd602ff60fa553e98385e6e61cbf?rik=opjDU6QqRVKiiw&riu=http%3a%2f%2fclipart-library.com%2fimage_gallery%2fn1204014.png&ehk=sRwCSnsZ6QBjZyl9HQ8r03KYMlIx6xThHiscLWNpbiQ%3d&risl=&pid=ImgRaw&r=0"
+                  alt="AWS"
+                />
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -174,8 +216,6 @@ export default function Home() {
         </p>
       </section>
 
-      
-
       <section className="contact ">
         <div className="hid contact">
           <div>
@@ -194,7 +234,7 @@ export default function Home() {
           </div>
           <div className="w-[50vw]">
             <h3>Contact Me</h3>
-            <br/>
+            <br />
             <form>
               <div>
                 <input
@@ -211,7 +251,12 @@ export default function Home() {
                 />
               </div>
               <div>
-                <input type="text" id="subject" placeholder="  Subject" className="w-full"/>
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="  Subject"
+                  className="w-full"
+                />
               </div>
               <div>
                 <textarea
