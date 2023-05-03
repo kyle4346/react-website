@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 :root {
-  background-color: hsl(212.73, 80.49%, 91.96%);
   /* hsl(212.73,80.49%,91.96%)  */
   /* hsl(210,66.67%,97.65%) */
+  background-color: #fcfdfe;
   font-size: 5vh;
+  scroll-behavior: smooth;
 }
 
 p {
@@ -15,6 +16,58 @@ p {
 
 .menu {
   height: 10vh;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  justify-content: space-between;
+  /* background-color: #fcfdfe; */
+}
+
+.menu-move {
+  height: 10vh;
+  display: flex;
+  z-index: 1;
+  width: 100%;
+  justify-content: space-between;
+  animation: menuVis 5s 1 forwards;
+  background-color: transparent;
+  position: fixed;
+}
+
+@keyframes menuVis {
+  from {background-color: darkgrey; opacity: 0;}
+  to {background-color: darkgrey; opacity: 1;}
+}
+
+.menu h3 {
+  text-align: center;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.left-side {
+  position: relative;
+  display: flex;
+  float: left;
+  top: 1vh;
+}
+
+.right-side {
+  position: relative;
+  display: flex;
+  float: right;
+  top: 1vh;
+}
+
+.title {
+  float: none;
+  margin: auto;
+  width: 25vw;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .title_name {
@@ -37,16 +90,17 @@ p {
   width: 100%;
   opacity: 0;
   animation: vis 2s forwards;
+  background-color: transparent;
 }
 
 @keyframes vis {
   from {opacity: 0;}
-  to {opacity: 0.3;}
+  to {opacity: 1;}
 }
 
 .centered {
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

@@ -6,7 +6,8 @@ import gsap from "gsap";
 import React from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import url from "./kyle-cortez.png";
+import url from "./static/kyle.png";
+import Link from "next/link";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -18,6 +19,55 @@ const orbitron = Orbitron({
 export default function Home() {
   //Title Animation code from Design Course https://www.youtube.com/watch?v=va1RrFr-gms
   useEffect(() => {
+    // if (
+    //   window.performance
+    //     .getEntriesByType("navigation")
+    //     .map((nav) => nav.type)
+    //     .includes("reload")
+    // ) {
+    //   window.location.href = "http://localhost:3000/";
+    // }
+
+    // if (window.location.reload) {
+    //   window.location.href = "http://localhost:3000/";
+    // }
+
+    // window.onbeforeunload = function(e) {
+    //   window.location.href = "https://localhost:3000/";
+    // }
+
+    // window.onbeforeunload = function (e) {
+    //   var currentURL = window.location.href;
+    //   if (currentURL > -1) {
+    //     window.location.href = currentURL;
+    //   }
+    // };
+
+    // window.BeforeUnloadEvent = function (e) {
+    //   window.location.href = "https://localhost:3000/";
+    // }
+
+    let aboutMenav = document.querySelector('#aboutLink');
+    let aboutMeID = document.querySelector('#aboutMe');
+    aboutMenav.addEventListener("click", something,false);
+    function something(e) {
+      aboutMeID.scrollIntoView({behavior: "smooth"});
+    }
+
+    let skillsNav = document.querySelector('#skillsLink');
+    let skillsID = document.querySelector('#skills');
+    skillsNav.addEventListener("click",skills,false);
+    function skills(e) {
+      skillsID.scrollIntoView({behavior:"smooth"});
+    }
+
+    let contactNav = document.querySelector('#contactLink');
+    let contactID = document.querySelector('#contact');
+    contactNav.addEventListener("click", contacts,false);
+    function contacts(e) {
+      contactID.scrollIntoView({behavior:"smooth"});
+    }
+
     const myText = new SplitType("#my-text");
     gsap.to(".char", {
       y: 0,
@@ -26,28 +76,32 @@ export default function Home() {
       duration: 0.2,
     });
 
-    // gsap.to(".green", {
-    //   x: 200,
-    //   duration: 5,
-    //   rotation: 360,
-    //   backgroundColor: "#F5F9FD",
-    //   repeat: 2,
-    //   yoyo: true,
-    // });
-
     const hiddenElements = document.querySelectorAll(".hid");
+    const menubar = document.querySelectorAll(".menu");
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         // console.log(entry);
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
+        }
+        // else {
+        //   entry.target.classList.remove("show");
+        // }
+      });
+    });
+
+    const menuObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (!entry.isIntersecting) {
+          entry.target.classList.add("menu-move");
         }
       });
     });
 
     hiddenElements.forEach((el) => observer.observe(el));
+    menubar.forEach((el) => menuObserver.observe(el));
   }, []);
 
   // <ReactPlayer
@@ -65,15 +119,44 @@ export default function Home() {
   return (
     <main className={orbitron.className}>
       <nav className="menu">
-        <h1 className="title_name" id="my-text">
-          Kyle Cortez
-        </h1>
+        <div className="title">
+          {/* inspired by g.sap with css from ww3schools.com */}
+          <Link href="/" >
+            <h1 className="title_name" id="my-text">
+              Kyle Cortez
+            </h1>
+          </Link>
+        </div>
+        <div className="left-side">
+          <h3 className="w-[16vw] mx-[2vw]">
+            <button id="aboutLink" className="text-center">
+              About Me
+            </button>
+          </h3>
+          <h3 className="w-[5vw] mx-[2vw]">
+            <button id="skillsLink" className="text-center">
+              Skills
+            </button>
+          </h3>
+        </div>
+
+        <div className="right-side">
+          <h3 className="mx-[2vw]">
+            <button id="contactLink" className="text-center">
+              Contact
+            </button>
+          </h3>
+          <h3 className="mx-[2vw]">Work</h3>
+        </div>
       </nav>
 
       {/* <div className="green"></div> */}
 
       <section id="main">
-        <Image src={url} alt=" " priority={true} className="main-image" />
+        <div className="w-full">
+          <Image src={url} alt=" " priority={true} className="main-image" />
+        </div>
+
         <div className="centered">
           <ul className="typewriter-list">
             <li className="text1">
@@ -93,7 +176,55 @@ export default function Home() {
       </section>
       {/* https://www.characterlives.org/wp-content/uploads/2019/06/power-of-commitment.jpg */}
 
-      <section className="skills">
+      <section className="hid" id="aboutMe">
+        <h3>About Me</h3>
+        <p>
+          Hi, my name is Kyle Cortez and I&apos;m a recent tech grad seeking a
+          position in software engineering. In my freetime, I like participating
+          in hackathons, learning about web development, or playing tennis at my
+          University. Since graduation I&apos;ve engaged with entrepreneurs in
+          the Houston area to learn more about how they growed their business
+          and got their ideas off the ground. If you&apos;d like to know more
+          about me, contact me below or in LinkedIn and I&apos;ll be happy to
+          discuss more about my work
+        </p>
+      </section>
+
+      <section className="hid">
+        <div className="logos">
+          <div className="logo">
+            <h3>Commitment</h3>
+            <p>
+              Learning multiple programming languages and designing complex
+              circuits throughout my career both in academia and personally is
+              what inspires me to keep moving forward, despite the hardships
+              that may come
+            </p>
+          </div>
+          <div className="logo">
+            <h3>Ambitious</h3>
+            <p>
+              My passion to become a tech entrepreneur is a dream I&apos;ve had
+              since I was young. Turning my ideas into something that people can
+              use to help themselves is what I pride myself in doing no matter
+              the outcome. The COVID pandemic has truly tested my wits but
+              I&apos;m glad to still be working on myself after a while.
+            </p>
+          </div>
+          <div className="logo">
+            <h3>Goal-Oriented</h3>
+            <p>
+              I always keep myself focused at the task at hand and ensure that
+              it is done in a timely-manner. From developing web-apps to
+              designing circuits, I make sure that my tasks are done on or
+              before it&apos;s due. Everyone&apos;s had their ups and downs but
+              if the going gets tough, I work harder.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="skills" id="skills">
         <div className="hid">
           <h3>Skills</h3>
           <div>
@@ -167,56 +298,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="hid">
-        <div className="logos">
-          <div className="logo">
-            <h3>Commitment</h3>
-            <p>
-              Learning multiple programming languages and designing complex
-              circuits throughout my career both in academia and personally is
-              what inspires me to keep moving forward, despite the hardships
-              that may come
-            </p>
-          </div>
-          <div className="logo">
-            <h3>Ambitious</h3>
-            <p>
-              My passion to become a tech entrepreneur is a dream I&apos;ve had
-              since I was young. Turning my ideas into something that people can
-              use to help themselves is what I pride myself in doing no matter
-              the outcome. The COVID pandemic has truly tested my wits but
-              I&apos;m glad to still be working on myself after a while.
-            </p>
-          </div>
-          <div className="logo">
-            <h3>Goal-Oriented</h3>
-            <p>
-              I always keep myself focused at the task at hand and ensure that
-              it is done in a timely-manner. From developing web-apps to
-              designing circuits, I make sure that my tasks are done on or
-              before it&apos;s due. Everyone&apos;s had their ups and downs but
-              if the going gets tough, I work harder.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="hid">
-        <h3>About Me</h3>
-        <p>
-          Hi, my name is Kyle Cortez and I&apos;m a recent tech grad currently
-          seeking a position in software engineering or related position. In my
-          freetime, I like participating in hackathons, making games, or play
-          tennis at my University. Since graduation I&apos;ve been engaged with
-          entrepreneurs in the Houston area to develop a medical device with my
-          team and help people track their vital signs online without going to
-          the hospital. If you&apos;d like to know more about me, contact me
-          below or in LinkedIn and I&apos;ll be happy to discuss more about my
-          work
-        </p>
-      </section>
-
-      <section className="contact ">
+      <section className="contact" id="contact">
         <div className="hid contact">
           <div>
             <h3>Contact Info</h3>
