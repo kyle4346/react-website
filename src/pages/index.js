@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Head from "next/head";
 import { Orbitron } from "next/font/google";
 import SplitType from "split-type";
 import { useEffect } from "react";
@@ -19,34 +20,6 @@ const orbitron = Orbitron({
 export default function Home() {
   //Title Animation code from Design Course https://www.youtube.com/watch?v=va1RrFr-gms
   useEffect(() => {
-    // if (
-    //   window.performance
-    //     .getEntriesByType("navigation")
-    //     .map((nav) => nav.type)
-    //     .includes("reload")
-    // ) {
-    //   window.location.href = "http://localhost:3000/";
-    // }
-
-    // if (window.location.reload) {
-    //   window.location.href = "http://localhost:3000/";
-    // }
-
-    // window.onbeforeunload = function(e) {
-    //   window.location.href = "https://localhost:3000/";
-    // }
-
-    // window.onbeforeunload = function (e) {
-    //   var currentURL = window.location.href;
-    //   if (currentURL > -1) {
-    //     window.location.href = currentURL;
-    //   }
-    // };
-
-    // window.BeforeUnloadEvent = function (e) {
-    //   window.location.href = "https://localhost:3000/";
-    // }
-
     let aboutMenav = document.querySelector('#aboutLink');
     let aboutMeID = document.querySelector('#aboutMe');
     aboutMenav.addEventListener("click", something,false);
@@ -118,6 +91,11 @@ export default function Home() {
   //https://www.youtube.com/watch?v=ysz5S6PUM-U
   return (
     <main className={orbitron.className}>
+    <Head>
+      <title>Kyle Cortez</title>
+      <meta charSet="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </Head>
       <nav className="menu">
         <div className="title">
           {/* inspired by g.sap with css from ww3schools.com */}
