@@ -7,8 +7,17 @@ import gsap from "gsap";
 import React from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import url from "./static/kyle.png";
 import Link from "next/link";
+import url from "./static/kyle.png";
+import url6 from "./static/smartsoft/smartsoft.png";
+import url2 from "./static/smartsoft/autocad.png";
+import url4 from "./static/smartsoft/circuits.png";
+import url5 from "./static/smartsoft/interview.png";
+import url3 from "./static/smartsoft/arm.png";
+import url1 from "./static/smartsoft/group.png";
+import url7 from "./static/construction.png";
+import url8 from "./static/UIT.png";
+import url9 from "./static/justice.png";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -20,25 +29,32 @@ const orbitron = Orbitron({
 export default function Home() {
   //Title Animation code from Design Course https://www.youtube.com/watch?v=va1RrFr-gms
   useEffect(() => {
-    let aboutMenav = document.querySelector('#aboutLink');
-    let aboutMeID = document.querySelector('#aboutMe');
-    aboutMenav.addEventListener("click", something,false);
+    let aboutMenav = document.querySelector("#aboutLink");
+    let aboutMeID = document.querySelector("#aboutMe");
+    aboutMenav.addEventListener("click", something, false);
     function something(e) {
-      aboutMeID.scrollIntoView({behavior: "smooth"});
+      aboutMeID.scrollIntoView({ behavior: "smooth" });
     }
 
-    let skillsNav = document.querySelector('#skillsLink');
-    let skillsID = document.querySelector('#skills');
-    skillsNav.addEventListener("click",skills,false);
+    let skillsNav = document.querySelector("#skillsLink");
+    let skillsID = document.querySelector("#skills");
+    skillsNav.addEventListener("click", skills, false);
     function skills(e) {
-      skillsID.scrollIntoView({behavior:"smooth"});
+      skillsID.scrollIntoView({ behavior: "smooth" });
     }
 
-    let contactNav = document.querySelector('#contactLink');
-    let contactID = document.querySelector('#contact');
-    contactNav.addEventListener("click", contacts,false);
+    let contactNav = document.querySelector("#contactLink");
+    let contactID = document.querySelector("#contact");
+    contactNav.addEventListener("click", contacts, false);
     function contacts(e) {
-      contactID.scrollIntoView({behavior:"smooth"});
+      contactID.scrollIntoView({ behavior: "smooth" });
+    }
+
+    let timeNav = document.querySelector("#workLink");
+    let timeclass = document.querySelector(".Timestart");
+    timeNav.addEventListener("click", timelines, false);
+    function timelines(e) {
+      timeclass.scrollIntoView({ behavior: "smooth" });
     }
 
     const myText = new SplitType("#my-text");
@@ -48,6 +64,23 @@ export default function Home() {
       delay: 0.2,
       duration: 0.2,
     });
+
+    var slideIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > x.length) {
+        slideIndex = 1;
+      }
+      x[slideIndex - 1].style.display = "block";
+      setTimeout(carousel, 5000); // Change image every 2 seconds
+    }
 
     const hiddenElements = document.querySelectorAll(".hid");
     const menubar = document.querySelectorAll(".menu");
@@ -91,15 +124,15 @@ export default function Home() {
   //https://www.youtube.com/watch?v=ysz5S6PUM-U
   return (
     <main className={orbitron.className}>
-    <Head>
-      <title>Kyle Cortez</title>
-      <meta charSet="UTF-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </Head>
+      <Head>
+        <title>Kyle Cortez</title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <nav className="menu">
         <div className="title">
           {/* inspired by g.sap with css from ww3schools.com */}
-          <Link href="/" >
+          <Link href="/">
             <h1 className="title_name" id="my-text">
               Kyle Cortez
             </h1>
@@ -120,11 +153,15 @@ export default function Home() {
 
         <div className="right-side">
           <h3 className="mx-[2vw]">
+            <button id="workLink" className="text-center">
+              Work
+            </button>
+          </h3>
+          <h3 className="mx-[2vw]">
             <button id="contactLink" className="text-center">
               Contact
             </button>
           </h3>
-          <h3 className="mx-[2vw]">Work</h3>
         </div>
       </nav>
 
@@ -275,6 +312,188 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Timeline code from OnlineITtuts Tutorials!! https://www.youtube.com/watch?v=CyI4sX4Ls4g */}
+
+      {/* <!-- ----------------Main header start------------------- --> */}
+      <header id="main_header" className="time Timestart">
+        <div className="container">
+          <h1>
+            <i className="fa-solid fa-trophy"></i>Working Timeline
+          </h1>
+        </div>
+      </header>
+      {/* <!-- ----------------Main header close------------------- --> */}
+
+      {/* <!-- ----------------Timeline start--------------------- --> */}
+      <section id="timeline" className="time">
+        <ul>
+          <li>
+            <div>
+              <h3>
+                2022 - Present:
+                <br />
+                Red Labs Startup Accelerator
+              </h3>
+              {/* Slideshow code from ww3schools https://www.w3schools.com/w3css/w3css_slideshow.asp */}
+              <Image className="mySlides IMG" src={url1} alt=" " />
+              <Image className="mySlides IMG" src={url2} alt=" " />
+              <Image className="mySlides IMG" src={url3} alt=" " />
+              <Image className="mySlides IMG" src={url4} alt=" " />
+              <Image className="mySlides IMG" src={url5} alt=" " />
+              <Image className="mySlides IMG" src={url6} alt=" " />
+              <p>
+                Developed a medical device with a team of 5 called the RPMS
+                (Remote Patient Monitoring System). <br />
+                <br />
+                It tracks patients vital signs such as blood pressure, O2 Sat,
+                temperature, etc. to provide meaningful information to the
+                provider depending on the patients chronic illness. <br />
+                <br />
+                The device was developed using the Arduino IDE while case was
+                designed through AutoCad.
+              </p>
+              <br />
+              <p>
+                Company:
+                <br />
+                Smartsoft
+                <br />
+                <br />
+                Members:
+                <br />
+                Kyle Cortez
+                <br />
+                Cecilia Obami
+                <br />
+                Kelvin Caducoy
+                <br />
+                Ever Chavez
+                <br />
+                Caleb Hairston
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>
+                2022:
+                <br />
+                Construction Management Application{" "}
+              </h3>
+              <Image className="IMG" src={url7} alt=" " />
+              <p>
+                Developed a construction management software through Vue.js and
+                MongoDB. <br />
+                <br />I was a part of a 5 person team that developed the
+                software for Piping International to digitize their pen and
+                paper method and efficiently manage their construction projects.
+                <br />
+                <br />
+                They tasked us with helping them design a new system to manage
+                the materials, contractors and phases for their housing projects
+                and increase their efficiency.
+              </p>
+              <br />
+              <p>
+                Project Manager:
+                <br />
+                Chad Johnson
+                <br />
+                <br />
+                Assistant Project Manager:
+                <br />
+                Jose Zelaya
+                <br />
+                <br />
+                Lead Database Developer
+                <br />
+                Noah Hendricks
+                <br />
+                <br />
+                Lead Application Developer
+                <br />
+                Kyle Cortez
+                <br />
+                <br />
+                Lead Support Analyst
+                <br />
+                Victory Nguyen
+              </p>
+              <br />
+              <a href="https://cis-4375.vercel.app/" className="btn">
+                View Project
+              </a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>
+                2021:
+                <br />
+                University of Houston IT support
+              </h3>
+              <Image className="IMG" src={url8} alt=" " />
+              <p>
+                Assisted students, faculty, and staff to navigate their
+                Cougarnet/MyUH accounts
+                <br />
+                <br />
+                performed tier 1 support by answering phone calls, online live
+                chat messaging, or helping students at the front desk.
+                <br />
+                <br />
+                We are the first point of contact for anyone looking to
+                troubleshoot their technology problems.
+                <br />
+                <br />
+                Most of the problems we encounter include password resets, email
+                update, software troubleshooting, wireless troubleshooting, and
+                general campus navigation.
+              </p>
+              <br />
+              <a href="https://uh.edu/infotech/" className="btn">
+                View Webpage
+              </a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>
+                2021:
+                <br />
+                Restoring Justice Intake Form Application
+              </h3>
+              <Image className="IMG" src={url9} alt=" " />
+              <p>
+                Developed an intake form application with a team of 3 people to
+                help Restoring Justice fill out their clients information.
+                <br />
+                <br />
+                This was developed through Vue.js and uses MongoDB to store the
+                data taken from the intake form filled out by their clients.
+                Routing for requests utilized the Axios API and was stylized
+                using Bootstrap.
+              </p>
+              <br />
+              <p>
+                Members:
+                <br />
+                Kyle Cortez
+                <br />
+                Andres Pirela
+                <br />
+                Omar Martinez
+              </p>
+              <br />
+              <a href="https://restoring-justice.vercel.app/" className="btn">
+                View Project
+              </a>
+            </div>
+          </li>
+        </ul>
+      </section>
+      {/* <!-- ----------------Timeline close--------------------- --> */}
 
       <section className="contact" id="contact">
         <div className="hid contact">
