@@ -468,7 +468,7 @@ export default function Home() {
                 Routing for requests utilized the Axios API and was stylized
                 using Bootstrap.
               </p>
-              {/* <br />
+              {/* <br /> 
               <p>
                 Members:
                 <br />
