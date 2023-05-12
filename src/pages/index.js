@@ -507,39 +507,43 @@ export default function Home() {
           <div className="w-[50vw]">
             <h3>Contact Me</h3>
             <br />
-            <form>
+            <form action="https://formsubmit.co/smartsoft314@gmail.com" method="POST">
               <div>
                 <input
                   type="text"
+                  name="name"
                   id="name"
                   placeholder="  Name"
                   className="mr-[10%] w-[45%]"
                 />
                 <input
-                  type="text"
+                  type="email"
+                  name="email"
                   id="email"
                   placeholder="  Email Address"
                   className="w-[45%]"
                 />
               </div>
-              <div>
+              {/* <div>
                 <input
                   type="text"
                   id="subject"
+                  name="_subject"
                   placeholder="  Subject"
                   className="w-full"
                 />
-              </div>
+              </div> */}
               <div>
                 <textarea
                   id="Message"
+                  name="message"
                   placeholder="  Message"
                   className="w-full min-h-[5vh] max-h-[35vh]"
                   rows={4}
                 />
               </div>
               <div>
-                <input type="submit" placeholder="submit" />
+                <button type="submit">Send</button>
               </div>
             </form>
           </div>
