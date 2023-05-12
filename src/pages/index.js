@@ -126,8 +126,6 @@ export default function Home() {
     <main className={orbitron.className}>
       <Head>
         <title>Kyle Cortez</title>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <nav className="menu">
         <div className="title">
@@ -330,9 +328,7 @@ export default function Home() {
         <ul>
           <li>
             <div>
-              <h3>
-                2022 - Present: Red Labs Startup Accelerator
-              </h3>
+              <h3>2022 - Present: Red Labs Startup Accelerator</h3>
               {/* Slideshow code from ww3schools https://www.w3schools.com/w3css/w3css_slideshow.asp */}
               <Image className="mySlides IMG" src={url1} alt=" " />
               <Image className="mySlides IMG" src={url2} alt=" " />
@@ -377,9 +373,10 @@ export default function Home() {
                 Construction Management App
               </h3>
               <Image className="IMG" src={url7} alt=" " />
-              <p>I was a part of a 5 person team that developed the
-                software for Piping International to digitize their pen and
-                paper method and efficiently manage their construction projects.
+              <p>
+                I was a part of a 5 person team that developed the software for
+                Piping International to digitize their pen and paper method and
+                efficiently manage their construction projects.
                 {/* <br />
                 <br />
                 They tasked us with helping them design a new system to manage
@@ -428,8 +425,9 @@ export default function Home() {
               <Image className="IMG" src={url8} alt=" " />
               <p>
                 Assisted students, faculty, and staff to navigate their
-                Cougarnet/MyUH accounts by performing tier 1 support through phone calls, online live
-                chat messaging, or helping students at the front desk.
+                Cougarnet/MyUH accounts by performing tier 1 support through
+                phone calls, online live chat messaging, or helping students at
+                the front desk.
                 {/* <br />
                 <br />
                 performed tier 1 support by answering phone calls, online live
@@ -463,10 +461,10 @@ export default function Home() {
                 help Restoring Justice fill out their clients information.
                 <br />
                 <br />
-                Developed by Vue.js and uses MongoDB to store the
-                data taken from the intake form filled out by their clients.
-                Routing for requests utilized the Axios API and was stylized
-                using Bootstrap.
+                Developed by Vue.js and uses MongoDB to store the data taken
+                from the intake form filled out by their clients. Routing for
+                requests utilized the Axios API and was stylized using
+                Bootstrap.
               </p>
               {/* <br /> 
               <p>
@@ -507,7 +505,10 @@ export default function Home() {
           <div className="w-[50vw]">
             <h3>Contact Me</h3>
             <br />
-            <form action="https://formsubmit.co/smartsoft314@gmail.com" method="POST">
+            <form
+              action="https://formsubmit.co/smartsoft314@gmail.com"
+              method="POST"
+            >
               <div>
                 <input
                   type="text"
