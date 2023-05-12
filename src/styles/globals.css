@@ -6,7 +6,7 @@
   /* hsl(212.73,80.49%,91.96%)  */
   /* hsl(210,66.67%,97.65%) */
   background-color: #fcfdfe;
-  font-size: 5vh;
+  font-size: 3vw;
   scroll-behavior: smooth;
   /* line-height: 5vh; */
 
@@ -16,7 +16,7 @@
 }
 
 p {
-  font-size: 3vh;
+  font-size: 1.5vw;
 }
 
 .menu {
@@ -26,6 +26,7 @@ p {
   z-index: 1;
   width: 100%;
   justify-content: space-between;
+  font-size: 3vw;
   /* background-color: #fcfdfe; */
 }
 
@@ -45,6 +46,10 @@ p {
   to {background-color: darkgrey; opacity: 1;}
 }
 
+button {
+  font-size: inherit;
+}
+
 .menu h3 {
   text-align: center;
   padding-left: 2vw;
@@ -62,6 +67,7 @@ p {
   position: relative;
   display: flex;
   float: right;
+  flex-direction: row-reverse;
   top: 1vh;
 }
 
@@ -77,7 +83,7 @@ p {
 
 .title_name {
   text-align: center;
-  font-size: 7vh;
+  font-size: inherit;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -306,14 +312,19 @@ img {
 }
 
 .IMG {
-  height: 8em;
+  height: 15em;
 }
 
 .time {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 1.5vw;
   background-color: aliceblue;
+}
+
+.time p {
+  font-size: 1vw;
 }
 
 .container {

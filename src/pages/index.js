@@ -138,26 +138,26 @@ export default function Home() {
             </h1>
           </Link>
         </div>
-        <div className="left-side">
-          <h3 className="w-[16vw] mx-[2vw]">
-            <button id="aboutLink" className="text-center">
+        <div className="left-side w-[40vw]">
+          <h3>
+            <button id="aboutLink" className="text-center ">
               About Me
             </button>
           </h3>
-          <h3 className="w-[5vw] mx-[2vw]">
+          <h3>
             <button id="skillsLink" className="text-center">
               Skills
             </button>
           </h3>
         </div>
 
-        <div className="right-side">
-          <h3 className="mx-[2vw]">
+        <div className="right-side w-[40vw]">
+          <h3>
             <button id="workLink" className="text-center">
               Work
             </button>
           </h3>
-          <h3 className="mx-[2vw]">
+          <h3>
             <button id="contactLink" className="text-center">
               Contact
             </button>
@@ -331,9 +331,7 @@ export default function Home() {
           <li>
             <div>
               <h3>
-                2022 - Present:
-                <br />
-                Red Labs Startup Accelerator
+                2022 - Present: Red Labs Startup Accelerator
               </h3>
               {/* Slideshow code from ww3schools https://www.w3schools.com/w3css/w3css_slideshow.asp */}
               <Image className="mySlides IMG" src={url1} alt=" " />
@@ -349,11 +347,8 @@ export default function Home() {
                 It tracks patients vital signs such as blood pressure, O2 Sat,
                 temperature, etc. to provide meaningful information to the
                 provider depending on the patients chronic illness. <br />
-                <br />
-                The device was developed using the Arduino IDE while case was
-                designed through AutoCad.
               </p>
-              <br />
+              {/* <br />
               <p>
                 Company:
                 <br />
@@ -371,7 +366,7 @@ export default function Home() {
                 Ever Chavez
                 <br />
                 Caleb Hairston
-              </p>
+              </p> */}
             </div>
           </li>
           <li>
@@ -379,22 +374,19 @@ export default function Home() {
               <h3>
                 2022:
                 <br />
-                Construction Management Application{" "}
+                Construction Management App
               </h3>
               <Image className="IMG" src={url7} alt=" " />
-              <p>
-                Developed a construction management software through Vue.js and
-                MongoDB. <br />
-                <br />I was a part of a 5 person team that developed the
+              <p>I was a part of a 5 person team that developed the
                 software for Piping International to digitize their pen and
                 paper method and efficiently manage their construction projects.
-                <br />
+                {/* <br />
                 <br />
                 They tasked us with helping them design a new system to manage
                 the materials, contractors and phases for their housing projects
-                and increase their efficiency.
+                and increase their efficiency. */}
               </p>
-              <br />
+              {/* <br />
               <p>
                 Project Manager:
                 <br />
@@ -419,7 +411,7 @@ export default function Home() {
                 Lead Support Analyst
                 <br />
                 Victory Nguyen
-              </p>
+              </p> */}
               <br />
               <a href="https://cis-4375.vercel.app/" className="btn">
                 View Project
@@ -436,8 +428,9 @@ export default function Home() {
               <Image className="IMG" src={url8} alt=" " />
               <p>
                 Assisted students, faculty, and staff to navigate their
-                Cougarnet/MyUH accounts
-                <br />
+                Cougarnet/MyUH accounts by performing tier 1 support through phone calls, online live
+                chat messaging, or helping students at the front desk.
+                {/* <br />
                 <br />
                 performed tier 1 support by answering phone calls, online live
                 chat messaging, or helping students at the front desk.
@@ -449,7 +442,7 @@ export default function Home() {
                 <br />
                 Most of the problems we encounter include password resets, email
                 update, software troubleshooting, wireless troubleshooting, and
-                general campus navigation.
+                general campus navigation. */}
               </p>
               <br />
               <a href="https://uh.edu/infotech/" className="btn">
@@ -470,12 +463,12 @@ export default function Home() {
                 help Restoring Justice fill out their clients information.
                 <br />
                 <br />
-                This was developed through Vue.js and uses MongoDB to store the
+                Developed by Vue.js and uses MongoDB to store the
                 data taken from the intake form filled out by their clients.
                 Routing for requests utilized the Axios API and was stylized
                 using Bootstrap.
               </p>
-              <br />
+              {/* <br />
               <p>
                 Members:
                 <br />
@@ -484,7 +477,7 @@ export default function Home() {
                 Andres Pirela
                 <br />
                 Omar Martinez
-              </p>
+              </p> */}
               <br />
               <a href="https://restoring-justice.vercel.app/" className="btn">
                 View Project
