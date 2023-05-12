@@ -515,6 +515,7 @@ export default function Home() {
                   id="name"
                   placeholder="  Name"
                   className="mr-[10%] w-[45%]"
+                  required
                 />
                 <input
                   type="email"
@@ -522,6 +523,7 @@ export default function Home() {
                   id="email"
                   placeholder="  Email Address"
                   className="w-[45%]"
+                  required
                 />
               </div>
               {/* <div>
@@ -540,6 +542,7 @@ export default function Home() {
                   placeholder="  Message"
                   className="w-full min-h-[5vh] max-h-[35vh]"
                   rows={4}
+                  required
                 />
               </div>
               <div>
