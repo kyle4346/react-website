@@ -203,7 +203,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="hid">
+      {/* <section className="hid">
         <div className="logos">
           <div className="logo">
             <h3>Commitment</h3>
@@ -235,7 +235,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="skills" id="skills">
         <div className="hid">
