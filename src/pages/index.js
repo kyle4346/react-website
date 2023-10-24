@@ -499,7 +499,7 @@ export default function Home() {
               Email: kyle4346@gmail.com
               <br></br>
               <br></br>
-              Phone Number: +1 832 542 1275
+              
             </p>
           </div>
           <div className="w-[50vw]">
